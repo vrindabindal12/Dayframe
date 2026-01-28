@@ -4,6 +4,7 @@ import {
     SignedIn,
     SignedOut,
     SignInButton,
+    SignOutButton,
     SignUpButton,
 } from "@clerk/nextjs";
 
@@ -21,29 +22,31 @@ export default function Navigation() {
 
                 {/* Center: Page Links */}
                 <div className="hidden md:flex items-center justify-center gap-10 text-[50px]">
+                    <NavLink href="/">Home</NavLink>
                     <NavLink href="/dashboard">Dashboard</NavLink>
                     <NavLink href="/tasks">Tasks</NavLink>
                     <NavLink href="/calendar">Calendar</NavLink>
                 </div>
 
                 {/* Right: Auth Buttons */}
-                <div className="flex items-center justify-end gap-4">
+                <div className="flex items-center justify-end gap-5">
                     <SignedOut>
                         <SignInButton>
-                            <button className="text-l text-white hover:text-blue-500">
+                            <button className="rounded-lg px-4 p-5 text- font-medium transition hover:text-blue-500">
                                 Login
                             </button>
                         </SignInButton>
 
                         <SignUpButton>
-                            <button className="rounded-lg px-4 py-2 text-l font-medium transition hover:text-blue-500">
+                            <button className="rounded-lg px-4 p-5 text- font-medium transition hover:text-blue-500">
                                 Sign Up
                             </button>
                         </SignUpButton>
                     </SignedOut>
 
                     <SignedIn>
-                        <span className="text-sm opacity-80">Logged in</span>
+                        <Link href="/user-profile" className="cursor-pointer">Profile</Link>
+                        <SignOutButton />
                     </SignedIn>
                 </div>
 

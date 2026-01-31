@@ -1,37 +1,29 @@
-// src/components/Navbar.tsx
 import Link from "next/link";
-import {
-    SignedIn,
-    SignedOut,
-    UserButton
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default async function Navigation() {
     return (
         <nav className="sticky top-0 z-50 h-16 w-full border-b bg-black text-white">
-            <div className="mx-auto grid h-full max-w-7xl grid-cols-3 items-center px-10">
+            <div className="mx-auto flex h-full items-center justify-between px-6">
 
-                {/* Left: Logo */}
                 <div className="flex items-center">
-                    <span className="text-2xl font-semibold tracking-wide">
+                    <span className="text-2xl font-semibold tracking-wide ml-4">
                         Dayframe
                     </span>
                 </div>
 
-                {/* Center: Page Links */}
-                <div className="hidden md:flex items-center justify-center gap-10 text-[50px]">
-                    <NavLink href="/">Home</NavLink>
-                    <NavLink href="/dashboard">Dashboard</NavLink>
-                    <NavLink href="/tasks">Tasks</NavLink>
-                    <NavLink href="/calendar">Calendar</NavLink>
-                </div>
+                <div className="flex items-center gap-6 mr-4">
+                    <div className="hidden md:flex items-center gap-6">
+                        <NavLink href="/">Home</NavLink>
+                        <NavLink href="/dashboard">Dashboard</NavLink>
+                        <NavLink href="/tasks">Tasks</NavLink>
+                        <NavLink href="/calendar">Calendar</NavLink>
+                    </div>
 
-                {/* Right: Auth Buttons */}
-                <div className="flex items-center justify-end gap-5">
                     <SignedOut>
                         <Link
                             href="/login"
-                            className="inline-block hover:bg-blue-600 hover:p-1! hover:rounded"
+                            className="inline-block ml-2 hover:bg-blue-600 hover:!p-2 hover:rounded transition-all"
                         >
                             Login
                         </Link>

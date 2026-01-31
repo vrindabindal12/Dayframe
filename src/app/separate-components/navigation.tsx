@@ -29,8 +29,12 @@ export default async function Navigation() {
                 {/* Right: Auth Buttons */}
                 <div className="flex items-center justify-end gap-5">
                     <SignedOut>
-                        <Link href="/login">Login</Link>
-                        <Link href="/sign-up">Signup</Link>
+                        <Link
+                            href="/login"
+                            className="inline-block hover:bg-blue-600 hover:p-1! hover:rounded"
+                        >
+                            Login
+                        </Link>
                     </SignedOut>
                     <SignedIn>
                         <UserButton />

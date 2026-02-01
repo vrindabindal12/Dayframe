@@ -1,7 +1,7 @@
-export default function Dashboard(){
+export default function Tasks(){
     return (
         <div className="flex items-center justify-center min-h-screen">
-            Dashboard
+            Tasks
         </div>
     )
 }

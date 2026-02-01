@@ -8,7 +8,7 @@ type TasksTypes = {
     difficulty: "very" | "manageable" | "easy",
     timeRequired: "lengthy, requires a lot of time" | "slightly lengthy, can be managed within a moderate span" | "short, can be done within a short span",
     description: string,
-    category: "college" | "side-hustle" | "home" | "personal" | "school",
+    category: "side-hustle" | "home" | "personal" | "school",
     status: "to-do" | "in progress" | "completed",
     createdAt: Date,
     updatedAt: Date,
@@ -34,9 +34,9 @@ const TasksSchema = new mongoose.Schema<TasksTypes>({
         required: true
     },
     category: {
-        enum: ["college", "side-hustle", "home", "personal"],
+        enum: ["side-hustle", "home", "personal", "school"],
         type: String,
-        default: "college"
+        default: "school"
     },
     priority: {
         enum: ["Important", "Can be kept for later", "Moderately Important"],

@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import mongoose from "mongoose";
-import { connectURL } from "@/dbConnect";
-import { User } from "@clerk/nextjs/server";
+import mongoose from "mongoose"
+import { dbConnect } from "@/lib/dbConnections/dbConnect";
+
 export async function GET() {
   try {
-    await mongoose.connect(connectURL);
+    await dbConnect();
     return NextResponse.json({
       message: "successful",
     });
